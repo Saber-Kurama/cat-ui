@@ -1,0 +1,13 @@
+{
+  "name": "cat-ui",
+  "version": "0.0.0",
+  "author": "guochao <463561248@qq.com>",
+  "homepage": "",
+  "license": "ISC",
+  "scripts": {
+    "build": "rollup --config ./build/rollup.config.js"
+  },
+  "devDependencies": {
+    "rollup": "^2.52.1"
+  }
+}
