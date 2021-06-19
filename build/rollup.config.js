@@ -4,12 +4,30 @@
 const name = 'sasa'
 const file = type => `dist/${name}.${type}.js`
 export default {
-  input: 'src/index.ts',
-  output: {
-    name,
-    file: file('esm'),
-    format: 'es'
-  }
+  // input: [
+  //   'src/index.ts', 
+  //   'src/alert/index.ts', 
+  //   'src/button/index.ts'],
+  input: {
+    'index': 'src/index.ts',
+    'arert/index': 'src/alert/index.ts'
+  },
+  output: [
+    {
+      dir:'dist/es',
+      format: 'es'
+    },
+    {
+      dir: 'dist/cjs',
+      format: 'cjs'
+    }
+  ],
+  // output: {
+  //   name,
+  //   dir: 'dist',
+  //   // file: file('esm'),
+  //   format: 'es'
+  // }
   // output: [
   //   {
   //     file: './dist/umd/my-lib-umd.js',
