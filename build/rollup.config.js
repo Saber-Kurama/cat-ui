@@ -1,46 +1,48 @@
 /**
  * @type {import('rollup').RollupOptions}
  */
-const name = 'sasa'
-const file = type => `dist/${name}.${type}.js`
+const { babel } = require("@rollup/plugin-babel");
+const resolve = require('rollup-plugin-node-resolve');
+const commonjs = require('@rollup/plugin-commonjs');
+const typescript = require('@rollup/plugin-typescript');
+
+const name = "sasa";
+const file = (type) => `dist/${name}.${type}.js`;
 export default {
   // input: [
-  //   'src/index.ts', 
-  //   'src/alert/index.ts', 
+  //   'src/index.ts',
+  //   'src/alert/index.ts',
   //   'src/button/index.ts'],
   input: {
-    'index': 'src/index.ts',
-    'arert/index': 'src/alert/index.ts'
+    index: "src/index.ts",
+    "alert/index": "src/alert/index.ts",
+    "button/index": "src/button/index.ts",
   },
   output: [
     {
-      dir:'dist/es',
-      format: 'es'
+      dir: "dist",
+      format: "es",
+      exports: "auto",
+      // file:'es'
+      chunkFileNames: '[name]-[hash].js'
     },
-    {
-      dir: 'dist/cjs',
-      format: 'cjs'
-    }
+    // {
+    //   dir: "dist/cjs",
+    //   format: "cjs",
+    //   exports: "auto",
+    // },
   ],
-  // output: {
-  //   name,
-  //   dir: 'dist',
-  //   // file: file('esm'),
-  //   format: 'es'
-  // }
-  // output: [
-  //   {
-  //     file: './dist/umd/my-lib-umd.js',
-  //     format: 'umd',
-  //     name: 'myLib'
-  //   },
-  //   {
-  //     file: './dist/es/my-es.js',
-  //     format: 'es',
-  //   },
-  //   {
-  //     file: './dist/cjs/my-cjs.js',
-  //     format: 'cjs',
-  //   }
-  // ]
-}
+  plugins: [
+    // resolve(),
+    typescript(),
+    commonjs({
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    }),
+    babel({
+      babelHelpers: "bundled",
+      exclude: "node_modules/**",
+      // 必须设置 extensions，默认不包括 ts 和 tsx. see: https://babeljs.io/docs/en/babel-core#default_extensions
+      extensions: [".js", ".jsx", ".ts", ".tsx"],
+    }),
+  ],
+};

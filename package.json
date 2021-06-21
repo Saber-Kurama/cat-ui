@@ -7,7 +7,26 @@
   "scripts": {
     "build": "rollup --config ./build/rollup.config.js"
   },
+  "files": [
+    "src",
+    "dist",
+    "es",
+    "lib",
+    "types"
+  ],
   "devDependencies": {
-    "rollup": "^2.52.1"
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.5",
+    "@rollup/plugin-babel": "^5.3.0",
+    "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-typescript": "^8.2.1",
+    "@types/lodash": "^4.14.170",
+    "lodash": "^4.17.21",
+    "rollup": "^2.52.1",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "typescript": "^4.3.4"
+  },
+  "dependencies": {
+    "core-js": "^3.15.0"
   }
 }
