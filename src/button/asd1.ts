@@ -1,0 +1,1 @@
+export const asd1 = 'asd1';

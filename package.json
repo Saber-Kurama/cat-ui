@@ -5,6 +5,7 @@
   "homepage": "",
   "license": "ISC",
   "scripts": {
+    "build:types": "tsc --declaration --emitDeclarationOnly --outDir ./types",
     "build": "rollup --config ./build/rollup.config.js"
   },
   "files": [
@@ -19,11 +20,13 @@
     "@babel/preset-env": "^7.14.5",
     "@rollup/plugin-babel": "^5.3.0",
     "@rollup/plugin-commonjs": "^19.0.0",
+    "@rollup/plugin-multi-entry": "^4.0.0",
     "@rollup/plugin-typescript": "^8.2.1",
     "@types/lodash": "^4.14.170",
     "lodash": "^4.17.21",
     "rollup": "^2.52.1",
     "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-postcss": "^4.0.0",
     "typescript": "^4.3.4"
   },
   "dependencies": {

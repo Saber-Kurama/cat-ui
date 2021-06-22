@@ -20,6 +20,8 @@ https://www.npmjs.com/package/tsapi-from-yapi
 
 [从0到1，搭建一个体系完善的前端React组件库](https://cloud.tencent.com/developer/news/677782)
 
+[Vue3+Typescript 搭建PC端组件库](https://juejin.cn/post/6943530727258456100)
+
 https://www.cnblogs.com/kagol/p/14089755.html
 
 https://my.oschina.net/whutzl/blog/4915743
