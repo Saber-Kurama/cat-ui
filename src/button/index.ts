@@ -1,5 +1,5 @@
 import Alert from "../alert";
-import './style/index.css';
+import './style';
 import { asd } from './asd/index'
 export default () => {
   Alert();

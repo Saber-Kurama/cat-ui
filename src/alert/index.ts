@@ -1,6 +1,6 @@
 import Alert from './alert';
 import { concat } from 'lodash';
-import './style/index.css';
+import './style';
 
 export default () => {
   console.log('alert-----');
